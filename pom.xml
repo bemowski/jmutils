@@ -29,19 +29,20 @@
     </repositories>
     <!-- Shared version number properties for Spring -->
     <properties>
+        <org.springframework.version>3.2.4.RELEASE</org.springframework.version>
         <slf4j.version>1.7.5</slf4j.version>
         <logback.version>1.0.13</logback.version>
         <aspectj.version>1.7.3</aspectj.version>
         <compiler.version>1.7</compiler.version>
     </properties>
     <dependencies>
-         <dependency>
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.0.1</version>
             <scope>provided</scope>
         </dependency>
-       <dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.8.1</version>
@@ -99,6 +100,43 @@
             <groupId>net.jmatrix</groupId>
             <artifactId>jproperties</artifactId>
             <version>0.9.6</version>
+        </dependency>
+
+        <!-- Core utilities used by other modules. Define this if you use 
+            Spring Utility APIs (org.springframework.core.*/org.springframework.util.*) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <!-- Expression Language (depends on spring-core) Define this if 
+            you use Spring Expression APIs (org.springframework.expression.*) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <!-- Bean Factory and JavaBeans utilities (depends on spring-core) 
+            Define this if you use Spring Bean APIs (org.springframework.beans.*) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+        <!-- Aspect Oriented Programming (AOP) Framework (depends on spring-core, 
+            spring-beans) Define this if you use Spring AOP APIs (org.springframework.aop.*) -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${org.springframework.version}</version>
         </dependency>
 
         <dependency>
