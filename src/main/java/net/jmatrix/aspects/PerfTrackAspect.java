@@ -1,15 +1,15 @@
 package net.jmatrix.aspects;
 
-import org.apache.commons.logging.Log;
+import net.jmatrix.utils.ClassLogFactory;
+import net.jmatrix.utils.ExceptionUtils;
+import net.jmatrix.utils.PerfTrack;
+import net.jmatrix.utils.StringUtil;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
-
-import net.jmatrix.utils.ExceptionUtils;
-import net.jmatrix.utils.ClassLogFactory;
-import net.jmatrix.utils.PerfTrack;
-import net.jmatrix.utils.StringUtil;
+import org.slf4j.Logger;
 
 @Aspect
 public class PerfTrackAspect extends AbstractLoggingAspect
@@ -29,7 +29,7 @@ public class PerfTrackAspect extends AbstractLoggingAspect
       // from invocation to invocation. This will mean that the logger name that
       // appears in the log entry will be the class name annotated with
       // @PerfTracked and not PerfTracked itself.
-      Log log = ClassLogFactory.getLog(1);
+      Logger log = ClassLogFactory.getLog(1);
       String methodSignature = "<unknown>";
       String methodName = "<unknown>";
       long start=System.currentTimeMillis();

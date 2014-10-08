@@ -10,11 +10,11 @@ import net.jmatrix.syslog.LogContext;
 import net.jmatrix.utils.ClassLogFactory;
 import net.jmatrix.utils.PerfTrack;
 
-import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
 
 //Casting will be done elsewhere by consumer
 public class AsyncCallable<V> implements Callable<V> {
-	static final Log log = ClassLogFactory.getLog();
+	static final Logger log = ClassLogFactory.getLog();
 
 	Callable<V> delegate = null;
 	
@@ -66,22 +66,22 @@ public class AsyncCallable<V> implements Callable<V> {
       } 
       catch (InterruptedException e)
       {
-         log.error(e);
+         log.error("",e);
          throw e;
       }
       catch (ExecutionException e)
       {
-         log.error(e);
+         log.error("",e);
          throw e;
       }
       catch (RuntimeException e)
       {
-         log.error(e);
+         log.error("",e);
          throw e;
       }
       catch (Error e)
       {
-         log.error(e);
+         log.error("",e);
          throw e;
       }
       finally

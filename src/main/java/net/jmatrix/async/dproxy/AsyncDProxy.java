@@ -18,7 +18,7 @@ import net.jmatrix.async.ConcurrencyManager;
 import net.jmatrix.exception.JMException;
 import net.jmatrix.utils.ClassLogFactory;
 
-import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
 
 /**
  * <code>AsyncDProxy</code> is a dynamic proxy that wraps the methods of a class
@@ -54,7 +54,7 @@ import org.apache.commons.logging.Log;
  */
 public class AsyncDProxy implements InvocationHandler, DelegateProxy, Cloneable, Observer, ConcurrencyManager
 {
-   private static Log log = ClassLogFactory.getLog();
+   private static Logger log = ClassLogFactory.getLog();
 
    /**
     * DEFAULT_CONCURRENCY_LIMIT is the default maximum number of threads

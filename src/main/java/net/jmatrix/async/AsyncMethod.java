@@ -4,9 +4,9 @@ import java.lang.reflect.Method;
 import java.util.Observable;
 import java.util.concurrent.Callable;
 
-import org.apache.commons.logging.Log;
-
 import net.jmatrix.utils.ClassLogFactory;
+
+import org.slf4j.Logger;
 
 /**
  * <code><AsyncMethod/code> wraps the invocation of a given java method so that it
@@ -21,7 +21,7 @@ import net.jmatrix.utils.ClassLogFactory;
  */
 public class AsyncMethod<V> extends Observable implements Callable<V>
 {
-   static final Log log = ClassLogFactory.getLog();
+   static final Logger log = ClassLogFactory.getLog();
    
    protected Object target;
    protected Method method;

@@ -3,9 +3,9 @@ package net.jmatrix.async;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.apache.commons.logging.Log;
-
 import net.jmatrix.utils.ClassLogFactory;
+
+import org.slf4j.Logger;
 
 /**
  * <code>Notifier</code> is an abstract class that can be inherited by
@@ -20,7 +20,7 @@ import net.jmatrix.utils.ClassLogFactory;
  */
 public abstract class Notifier
 {
-   static final Log log = ClassLogFactory.getLog();
+   static final Logger log = ClassLogFactory.getLog();
    
    protected Set<Object> notificationTargets;
    

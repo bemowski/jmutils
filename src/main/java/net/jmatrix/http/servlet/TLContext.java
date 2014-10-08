@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.jmatrix.utils.ClassLogFactory;
 
-import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
 
 
 /**
@@ -35,7 +35,7 @@ import org.apache.commons.logging.Log;
  * @author Paul Bemowski
  */
 public final class TLContext {
-   static Log log=ClassLogFactory.getLog();
+   static Logger log=ClassLogFactory.getLog();
 
    // Implementation uses a single threadloacal Map<String, Object> with 
    // private, internally defined keys.  
