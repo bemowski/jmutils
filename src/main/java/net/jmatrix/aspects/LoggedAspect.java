@@ -1,15 +1,15 @@
 package net.jmatrix.aspects;
 
-import org.apache.commons.logging.Log;
+import net.jmatrix.annotations.Logged;
+import net.jmatrix.utils.ClassLogFactory;
+import net.jmatrix.utils.ExceptionUtils;
+import net.jmatrix.utils.StringUtil;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
-
-import net.jmatrix.utils.ExceptionUtils;
-import net.jmatrix.annotations.Logged;
-import net.jmatrix.utils.ClassLogFactory;
-import net.jmatrix.utils.StringUtil;
+import org.slf4j.Logger;
 
 @Aspect
 public class LoggedAspect extends AbstractLoggingAspect
@@ -20,7 +20,7 @@ public class LoggedAspect extends AbstractLoggingAspect
    @Around("loggedCall() && @annotation(logged)")
    public Object logged (ProceedingJoinPoint thisJoinPoint, Logged logged) throws Throwable
    {
-      Log log = ClassLogFactory.getLog(1);
+      Logger log = ClassLogFactory.getLog(1);
 
       String methodSignature = "<unknown>";
       String methodName = "<unknown>";

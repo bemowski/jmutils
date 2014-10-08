@@ -6,10 +6,9 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-
-import net.jmatrix.async.AsyncService;
 import net.jmatrix.utils.ClassLogFactory;
+
+import org.slf4j.Logger;
 
 /**
  * <code>NotifyingExecutor</code> extends the ThreadPoolExecutor and implements
@@ -22,7 +21,7 @@ import net.jmatrix.utils.ClassLogFactory;
  */
 public class NotifyingExecutor extends ThreadPoolExecutor implements Thread.UncaughtExceptionHandler
 {
-   static final Log log=ClassLogFactory.getLog();
+   static final Logger log=ClassLogFactory.getLog();
    
    /**
     * The notificationLock ensures that code that the code in

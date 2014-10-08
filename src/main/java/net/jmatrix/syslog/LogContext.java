@@ -7,7 +7,7 @@ import java.util.Set;
 
 import net.jmatrix.utils.ClassLogFactory;
 
-import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
 import org.slf4j.MDC;
 
 /** 
@@ -28,7 +28,7 @@ import org.slf4j.MDC;
  * 
  * */
 public class LogContext {
-   static Log log=ClassLogFactory.getLog();
+   static Logger log=ClassLogFactory.getLog();
    
    public static final String TRANSPORT="TRANSPORT";
    public static final String CLIENT_IP="CLIENT_IP";

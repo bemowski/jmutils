@@ -14,17 +14,17 @@ import javax.servlet.http.HttpSession;
 
 import net.jmatrix.annotations.PerfTracked;
 import net.jmatrix.http.servlet.TLContext;
-import net.jmatrix.jproperties.util.ClassLogFactory;
 import net.jmatrix.syslog.LogContext;
+import net.jmatrix.utils.ClassLogFactory;
 import net.jmatrix.utils.PerfTrack;
 
-import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
 
 /**
  * 
  */
 public class JMFilter implements Filter {
-   static Log log=ClassLogFactory.getLog();
+   static Logger log=ClassLogFactory.getLog();
   
    
    @Override

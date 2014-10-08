@@ -17,7 +17,7 @@ import net.jmatrix.exception.JMException.ErrorCode;
 import net.jmatrix.jproperties.JProperties;
 import net.jmatrix.utils.ClassLogFactory;
 
-import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
 
 
 /**
@@ -31,7 +31,7 @@ import org.apache.commons.logging.Log;
  */
 public class AsyncServiceImpl implements AsyncService, ThreadFactory 
 {
-   private static final Log log=ClassLogFactory.getLog();
+   private static final Logger log=ClassLogFactory.getLog();
    
    private static JProperties props;
 

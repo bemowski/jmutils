@@ -1,19 +1,21 @@
 package net.jmatrix.utils;
 
-import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /** */
 public class ClassLogFactory {
    /** */
-   public static final Log getLog() {
+   public static final Logger getLog() {
       String callingClassname=DebugUtils.getCallingClassName(1);
-      Log log=org.apache.commons.logging.LogFactory.getLog(callingClassname);
+      Logger log=LoggerFactory.getLogger(callingClassname);
       return log;
    }
 
-   public static final Log getLog(int i) {
+   public static final Logger getLog(int i) {
       String callingClassname=DebugUtils.getCallingClassName(1+i);
-      Log log=org.apache.commons.logging.LogFactory.getLog(callingClassname);
+      Logger log=LoggerFactory.getLogger(callingClassname);
       return log;
    }
 }

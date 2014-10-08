@@ -7,7 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
+
 
 /**
  * PerfTrack tracks performance through multiple operations within
@@ -29,7 +30,7 @@ import org.apache.commons.logging.Log;
  */
 public final class PerfTrack {
    private static boolean debug = Boolean.valueOf(System.getProperty("debug", "false"));
-   static Log log=ClassLogFactory.getLog();
+   static Logger log=ClassLogFactory.getLog();
    
    // FIXME: 
    //   - Change to InheritableThreadLocal??

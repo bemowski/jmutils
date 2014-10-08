@@ -1,16 +1,22 @@
 package net.jmatrix.utils;
 
-import java.sql.*;
-import java.util.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import org.apache.commons.logging.*;
+import org.slf4j.Logger;
 
 /**
  * 
  */
 public final class DBUtils {
-   static Log log = LogFactory.getLog(DBUtils.class);
+   static Logger log = ClassLogFactory.getLog();
    
    
    /**
