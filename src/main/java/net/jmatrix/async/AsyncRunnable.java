@@ -9,7 +9,6 @@ import net.jmatrix.utils.ClassLogFactory;
 import net.jmatrix.utils.PerfTrack;
 
 import org.apache.commons.logging.Log;
-import org.glassfish.hk2.api.ServiceLocator;
 
 /**
  * Sets the ThreadLocal variables from the constructing thread's 
