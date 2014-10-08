@@ -8,8 +8,7 @@ import net.jmatrix.syslog.LogContext;
 import net.jmatrix.utils.ClassLogFactory;
 import net.jmatrix.utils.PerfTrack;
 
-import org.apache.commons.logging.Log;
-import org.glassfish.hk2.api.ServiceLocator;
+import org.slf4j.Logger;
 
 /**
  * Sets the ThreadLocal variables from the constructing thread's 
@@ -18,7 +17,7 @@ import org.glassfish.hk2.api.ServiceLocator;
  */
 @SuppressWarnings("rawtypes")
 public class AsyncRunnable implements Runnable {
-   static final Log log=ClassLogFactory.getLog();
+   static final Logger log=ClassLogFactory.getLog();
 
    Runnable delegate=null;
    

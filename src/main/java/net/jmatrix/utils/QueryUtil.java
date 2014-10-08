@@ -10,14 +10,14 @@ import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.logging.Log;
+import org.slf4j.Logger;
 
 /**
  * Used to manipulate query strings.
  */
 public final class QueryUtil
 {
-   static Log log=ClassLogFactory.getLog();
+   static Logger log=ClassLogFactory.getLog();
    
    List<Pair> pairs=new ArrayList<Pair>();
    /** */

@@ -1,12 +1,12 @@
 package net.jmatrix.async;
 
-import org.apache.commons.logging.Log;
-
 import net.jmatrix.utils.ClassLogFactory;
+
+import org.slf4j.Logger;
 
 public class NotifyingThread extends Thread
 {
-   static final Log log=ClassLogFactory.getLog();
+   static final Logger log=ClassLogFactory.getLog();
    
    protected Notifier notifier;
    

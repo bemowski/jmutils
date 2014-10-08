@@ -8,24 +8,23 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.logging.Log;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.Signature;
-import org.aspectj.lang.reflect.MethodSignature;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationConfig;
-import com.fasterxml.jackson.databind.SerializationFeature;
-
 import net.jmatrix.annotations.Logged;
 import net.jmatrix.annotations.PerfTracked;
 import net.jmatrix.utils.ClassLogFactory;
 import net.jmatrix.utils.DebugUtils;
 import net.jmatrix.utils.StringUtil;
 
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.Signature;
+import org.aspectj.lang.reflect.MethodSignature;
+import org.slf4j.Logger;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+
 public abstract class AbstractLoggingAspect
 {   
-   private static final Log log = ClassLogFactory.getLog();
+   private static final Logger log = ClassLogFactory.getLog();
    static final String[] emptyArray = new String[] {};
    protected static Pattern pattern = Pattern.compile("%(<|([0-9]+)\\$)?([-#+ 0,(]*[0-9]*(?:\\.[0-9]+)?([bhscdoxefgat%jJdD]))");
    protected static ObjectMapper compactObjectMapper   = createObjectMapper(false);

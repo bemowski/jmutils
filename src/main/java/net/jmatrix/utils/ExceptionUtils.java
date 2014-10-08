@@ -2,15 +2,11 @@ package net.jmatrix.utils;
 
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-
-import net.jmatrix.utils.ClassLogFactory;
-import net.jmatrix.utils.ListUtil;
-import net.jmatrix.utils.StringUtil;
+import org.slf4j.Logger;
 
 public class ExceptionUtils
 {
-   private static Log log=ClassLogFactory.getLog();
+   private static Logger log=ClassLogFactory.getLog();
 
    public static String getUserMessage(Throwable t) {
       return getUserMessage(t, null);

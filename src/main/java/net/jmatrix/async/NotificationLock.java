@@ -3,9 +3,9 @@ package net.jmatrix.async;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apache.commons.logging.Log;
-
 import net.jmatrix.utils.ClassLogFactory;
+
+import org.slf4j.Logger;
 
 /**
  * <code>NotificationLock</code> extends {@link ReentrantLock} and adds some
@@ -18,7 +18,7 @@ import net.jmatrix.utils.ClassLogFactory;
 @SuppressWarnings("serial")
 public class NotificationLock extends ReentrantLock
 {
-   static final Log log=ClassLogFactory.getLog();
+   static final Logger log=ClassLogFactory.getLog();
    
    public NotificationLock()
    {
