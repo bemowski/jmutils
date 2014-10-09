@@ -1,4 +1,4 @@
-package net.jmatrix.syslog;
+package net.jmatrix.context;
 
 import java.util.HashMap;
 import java.util.HashSet;
