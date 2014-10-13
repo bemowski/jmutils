@@ -1,0 +1,207 @@
+Entering AnnotationTest.level1(s1="level1: This is a test of the annotation system. This is only a test.")
+Entering AnnotationTest.level2()
+Entering AnnotationTest.level3(s3="level1: This is a test of the annotation system. This is only a test.")
+Entering AnnotationTest.level4(s4="level1: This is a test of the annotation system. This is only a test.", o1=null, o3=null)
+level1: This is a test of the annotation system. This is only a test.
+Exiting[# ms] AnnotationTest.level4=null
+Entering AnnotationTest.level4(s4="level1: This is a test of the annotation system. This is only a test.", o1=null, o3=null)
+level1: This is a test of the annotation system. This is only a test.
+Exiting[# ms] AnnotationTest.level4=null
+Entering AnnotationTest.level4(s4="level1: This is a test of the annotation system. This is only a test.", o1=null, o3=null)
+level1: This is a test of the annotation system. This is only a test.
+Exiting[# ms] AnnotationTest.level4=null
+Entering AnnotationTest.level4(s4="level1: This is a test of the annotation system. This is only a test.", o1=null, o3=null)
+level1: This is a test of the annotation system. This is only a test.
+Exiting[# ms] AnnotationTest.level4=null
+Entering AnnotationTest.level4(s4="level1: This is a test of the annotation system. This is only a test.", o1=null, o3=null)
+level1: This is a test of the annotation system. This is only a test.
+Exiting[# ms] AnnotationTest.level4=null
+Entering AnnotationTest.level4b(s4="level1: This is a test of the annotation system. This is only a test.", o1=null, o3=null)
+level1: This is a test of the annotation system. This is only a test.
+Exiting[# ms] AnnotationTest.level4b=null
+Exiting[# ms] AnnotationTest.level3=null
+Exiting[# ms] AnnotationTest.level2=null
+Exiting[# ms] AnnotationTest.level1=null
+PerfTrack:
+AnnotationTest.level1(s1="level1: This is a test of the annotation system. This is only a test.") # ms
+  AnnotationTest.level2() # ms
+    AnnotationTest.level3(s3="level1: This is a test of the annotation system. This is only a test.") # ms
+      AnnotationTest.level4b(s4="level1: This is a test of the annotation system. This is only a test.", o1=null, o3=null) # ms
+      * 5 calls to AnnotationTest.level4 # ms
+      Other # ms
+    Other # ms
+  Other # ms
+
+PerfTrack:
+PerfTrack: no data?
+Entering AnnotationTest.level4(s4="level4: This is a test of the annotation system. This is only a test.", o1={ getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1 getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1" getList=[ "String1" "String2" "String3" "String4" "String5" "String6" ] getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2 getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2" getList=[ "String1" "String2" "String3" ] getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3 getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3" getList=[ "String1" "String2" "String3" ] } } } , o3=   {
+      getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1
+      getName="net.j..."
+      getList=[
+         "Strin..."
+         "Strin..."
+         "Strin..."
+         "Strin..."
+         "Strin..."
+         ... (1 members omitted)
+      ]
+      getO=
+      {
+         getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2
+         getName="net.j..."
+         getList=[
+            "Strin..."
+            "Strin..."
+            "Strin..."
+         ]
+         getO=
+         {
+            getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3
+            getName="net.j..."
+            getList=[
+               "Strin..."
+               "Strin..."
+               "Strin..."
+            ]
+         }
+      }
+   }
+)
+level4: This is a test of the annotation system. This is only a test.
+Exiting[# ms] AnnotationTest.level4=null
+PerfTrack:
+PerfTrack: no data?
+Entering AnnotationTest.loggedMethod(param="value1"
+)
+Exiting  AnnotationTest.loggedMethod=null
+Entering AnnotationTest.format1(s4=format1, o1={
+  "name" : "net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1",
+  "list" : [ "String1", "String2", "String3", "String4", "String5", "String6" ],
+  "o" : {
+    "name" : "net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2",
+    "list" : [ "String1", "String2", "String3" ],
+    "o" : {
+      "name" : "net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3",
+      "list" : [ "String1", "String2", "String3" ]
+    }
+  }
+}, o2={ getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1 getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1" getList=[ "String1" "String2" "String3" "String4" "String5" "String6" ] getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2 getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2" getList=[ "String1" "String2" "String3" ] getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3 getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3" getList=[ "String1" "String2" "String3" ] } } } )
+format1: This is a test of the annotation system. This is only a test.
+Exiting  AnnotationTest.format1=null
+PerfTrack:
+AnnotationTest.format1() # ms
+
+PerfTrack:
+PerfTrack: no data?
+Entering AnnotationTest.format2(s4=format2: This is a test of the annotation system. This is only a test., _s4=format2: This is a test of the annotation system. This is only a test., o2=   {
+      getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1
+      getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1"
+      getList=[
+         "String1"
+         "String2"
+         "String3"
+         "String4"
+         "String5"
+         "String6"
+      ]
+      getO=
+      {
+         getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2
+         getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2"
+         getList=[
+            "String1"
+            "String2"
+            "String3"
+         ]
+         getO=
+         {
+            getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3
+            getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3"
+            getList=[
+               "String1"
+               "String2"
+               "String3"
+            ]
+         }
+      }
+   }
+, o2.2={"name":"net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1","list":["String1","String2","String3","String4","String5","String6"],"o":{"name":"net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2","list":["String1","String2","String3"],"o":{"name":"net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3","list":["String1","String2","String3"]}}})
+format2: This is a test of the annotation system. This is only a test.
+Exiting  AnnotationTest.format2=null
+Error formatting args with format String: s4=%1$q
+java.util.UnknownFormatConversionException: Conversion = 'q'
+	at java.util.Formatter$FormatSpecifier.conversion(Formatter.java:2691) ~[na:1.8.0]
+	at java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2720) ~[na:1.8.0]
+	at java.util.Formatter.parse(Formatter.java:2560) ~[na:1.8.0]
+	at java.util.Formatter.format(Formatter.java:2501) ~[na:1.8.0]
+	at java.util.Formatter.format(Formatter.java:2455) ~[na:1.8.0]
+	at java.lang.String.format(String.java:2925) ~[na:1.8.0]
+	at net.jmatrix.aspects.AbstractLoggingAspect.format(AbstractLoggingAspect.java:246) [classes/:na]
+	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:121) [classes/:na]
+	at net.jmatrix.aspects.LoggedAspect.ajc$superDispatch$net_jmatrix_aspects_LoggedAspect$formatMethodSignature(LoggedAspect.java:1) [classes/:na]
+	at net.jmatrix.aspects.LoggedAspect.logged(LoggedAspect.java:36) [classes/:na]
+	at net.jmatrix.test.annotations.AnnotationTest.errorFormat1(AnnotationTest.java:115) [test-classes/:na]
+	at net.jmatrix.test.annotations.AnnotationTest.annotationTest(AnnotationTest.java:41) [test-classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44) [junit-4.8.1.jar:na]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15) [junit-4.8.1.jar:na]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41) [junit-4.8.1.jar:na]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20) [junit-4.8.1.jar:na]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76) [junit-4.8.1.jar:na]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50) [junit-4.8.1.jar:na]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193) [junit-4.8.1.jar:na]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52) [junit-4.8.1.jar:na]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191) [junit-4.8.1.jar:na]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42) [junit-4.8.1.jar:na]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184) [junit-4.8.1.jar:na]
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28) [junit-4.8.1.jar:na]
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31) [junit-4.8.1.jar:na]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236) [junit-4.8.1.jar:na]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264) [surefire-junit4-2.16.jar:2.16]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.16.jar:2.16]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124) [surefire-junit4-2.16.jar:2.16]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200) [surefire-booter-2.16.jar:2.16]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153) [surefire-booter-2.16.jar:2.16]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.16.jar:2.16]
+Entering AnnotationTest.errorFormat1(s4=%1$q: [Ljava.lang.Object;@00000000)
+Erroneous Format 1
+Exiting  AnnotationTest.errorFormat1=null
+Index: 1 is beyond the end of the argument array of length 1 at:
+java.lang.Exception
+	at net.jmatrix.aspects.AbstractLoggingAspect.format(AbstractLoggingAspect.java:238)
+	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:121)
+	at net.jmatrix.aspects.LoggedAspect.ajc$superDispatch$net_jmatrix_aspects_LoggedAspect$formatMethodSignature(LoggedAspect.java:1)
+	at net.jmatrix.aspects.LoggedAspect.logged(LoggedAspect.java:36)
+	at net.jmatrix.test.annotations.AnnotationTest.errorFormat2(AnnotationTest.java:123)
+	at net.jmatrix.test.annotations.AnnotationTest.annotationTest(AnnotationTest.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
+
+Entering AnnotationTest.errorFormat2(s4=Erroneous Format 2, nonExistantArg=)
+Erroneous Format 2
+Exiting  AnnotationTest.errorFormat2=null

@@ -14,7 +14,7 @@ import java.io.Writer;
 /**
  *
  */
-public final class StreamUtil 
+public final class StreamUtil
 {
    static final int EOS=-1;
 
