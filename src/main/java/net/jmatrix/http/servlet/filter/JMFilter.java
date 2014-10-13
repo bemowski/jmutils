@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import net.jmatrix.context.LogContext;
 import net.jmatrix.http.servlet.TLContext;
-import net.jmatrix.syslog.LogContext;
 import net.jmatrix.utils.ClassLogFactory;
 import net.jmatrix.utils.PerfTrack;
 

@@ -10,8 +10,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.StringWriter;
 
+import net.jmatrix.context.LogContext;
 import net.jmatrix.jproperties.JProperties;
-import net.jmatrix.syslog.LogContext;
 import net.jmatrix.test.annotations.AnnotationTest;
 import net.jmatrix.utils.ClassLogFactory;
 import net.jmatrix.utils.StreamUtil;
