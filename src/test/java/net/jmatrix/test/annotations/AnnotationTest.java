@@ -1,7 +1,7 @@
 package net.jmatrix.test.annotations;
 
 
-import java.io.StringWriter;
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class AnnotationTest extends AbstractServiceTest
       log.debug("Calling annotationTest()");
       
       // Add a new appender to capture the log output of this test in a StringWriter.
-      StringWriter sw = addLogCaptureAppender();
+      ByteArrayOutputStream baos = addLogCaptureAppender();
       
       // Run test
       String arg = "This is a test of the annotation system. This is only a test.";
@@ -42,7 +42,7 @@ public class AnnotationTest extends AbstractServiceTest
       errorFormat2("Erroneous Format 2");
       
       // Get the log output
-      String result = sw.toString();
+      String result = baos.toString();
     
       // Remove timing values which can vary and cause the comparison to the prior run to fail
       result = result.replaceAll("[0-9]+ms", "# ms");

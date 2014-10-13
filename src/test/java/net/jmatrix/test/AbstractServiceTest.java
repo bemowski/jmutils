@@ -19,15 +19,17 @@ import net.jmatrix.utils.StreamUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import ch.qos.logback.classic.PatternLayout;
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
+import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.OutputStreamAppender;
 
 /** */
 public class AbstractServiceTest {
-   static Logger log=ClassLogFactory.getLog();
+   static Logger log=(Logger)ClassLogFactory.getLog();
 
    public static JProperties p=new JProperties();
    
@@ -53,7 +55,7 @@ public class AbstractServiceTest {
       try {
          Thread.currentThread().sleep(3000);
       } catch (Exception ex) {
-         
+         log.error("Error sleeping: ",ex);
       }
    }
 
@@ -101,6 +103,15 @@ public class AbstractServiceTest {
             String s = StreamUtil.readToString(fis);
             assertEquals(result, s);
          }
+         catch (Throwable e)
+         {
+            // On failure write the results of the test run to the /tmp dir to make
+            // it easier to compare with the saved result.
+            FileOutputStream fos = new FileOutputStream(new File("/tmp",resultFileName));
+            fos.write(result.getBytes());
+            fos.close();
+            log.debug("Saved "+result.length()+" bytes to: "+f.getPath());
+         }
          finally
          {
             if (fis != null) fis.close();
@@ -124,7 +135,7 @@ public class AbstractServiceTest {
    
    protected String getOutputDir()
    {
-      return System.getProperty("test.output","../../test/output");
+      return System.getProperty("test.output",System.getProperty("project.basedir",".")+"/test/output");
    }
 
 
@@ -136,7 +147,7 @@ public class AbstractServiceTest {
     * returned from this method.<p>
     * 
     * The envisioned use case is that at the start of a test method, addLogCaptureAppender
-    * is called to begin capturing the loggin output during the test and then at the end
+    * is called to begin capturing the logging output during the test and then at the end
     * of the test method, the contents of the String writer is converted to a String and
     * compared against a saved copy of the log output that has been declared "good" using
     * the {@link #compareToSavedResult(String, String)} method in this class. This presumes
@@ -154,10 +165,18 @@ public class AbstractServiceTest {
    protected ByteArrayOutputStream addLogCaptureAppender()
    {
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
-      PatternLayout layout = new PatternLayout();
-      layout.setPattern("%m\n");
-      OutputStreamAppender osa = new OutputStreamAppender();
-      LoggerFactory.getLogger(org.slf4j.Logger.ROOT_LOGGER_NAME).addAppender(osa);
+      LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+      PatternLayoutEncoder ple = new PatternLayoutEncoder();
+      ple.setPattern("%msg%n");
+      ple.setContext(lc);
+      ple.start();
+      OutputStreamAppender<ILoggingEvent> osa = new OutputStreamAppender<>();
+      osa.setEncoder(ple);
+      osa.setContext(lc);
+      osa.setOutputStream(baos);
+      osa.start();
+      Logger logger = (Logger)LoggerFactory.getLogger(org.slf4j.Logger.ROOT_LOGGER_NAME);
+      logger.addAppender(osa);
       return baos;
    }
    
