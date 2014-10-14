@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import net.jmatrix.annotations.PerfTracked;
 import net.jmatrix.context.LogContext;
 import net.jmatrix.http.servlet.TLContext;
 import net.jmatrix.utils.ClassLogFactory;
@@ -37,7 +36,6 @@ public class JMFilter implements Filter {
    }
    
    @Override
-   @PerfTracked(format="request=%s", threshold=100)
    public void doFilter(ServletRequest request, ServletResponse response,
                         FilterChain chain) throws IOException, ServletException {
 
