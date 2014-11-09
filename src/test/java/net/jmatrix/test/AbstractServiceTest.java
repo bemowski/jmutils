@@ -103,14 +103,20 @@ public class AbstractServiceTest {
             String s = StreamUtil.readToString(fis);
             assertEquals(result, s);
          }
-         catch (Throwable e)
+         catch (IOException e)
          {
-            // On failure write the results of the test run to the /tmp dir to make
-            // it easier to compare with the saved result.
-            FileOutputStream fos = new FileOutputStream(new File("/tmp",resultFileName));
-            fos.write(result.getBytes());
-            fos.close();
-            log.debug("Saved "+result.length()+" bytes to: "+f.getPath());
+            handleFailure(result, resultFileName);
+            throw e;
+         }
+         catch (RuntimeException e)
+         {
+            handleFailure(result, resultFileName);
+            throw e;
+         }
+         catch (Error e)
+         {
+            handleFailure(result, resultFileName);
+            throw e;
          }
          finally
          {
@@ -131,6 +137,17 @@ public class AbstractServiceTest {
             if (fos != null) fos.close();
          }
       }
+   }
+
+   private void handleFailure(String result, String resultFileName) throws FileNotFoundException, IOException
+   {
+      // On failure write the results of the test run to the /tmp dir to make
+      // it easier to compare with the saved result.
+      File errorOutputFile = new File("/tmp",resultFileName);
+      FileOutputStream fos = new FileOutputStream(errorOutputFile);
+      fos.write(result.getBytes());
+      fos.close();
+      log.debug("Saved "+result.length()+" bytes to: "+errorOutputFile.getPath());
    }
    
    protected String getOutputDir()

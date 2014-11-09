@@ -34,9 +34,8 @@ AnnotationTest.level1(s1="level1: This is a test of the annotation system. This 
 
 PerfTrack:
 PerfTrack: no data?
-Entering AnnotationTest.level4(s4="level4: This is a test of the annotation system. This is only a test.", o1={ getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1 getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1" getList=[ "String1" "String2" "String3" "String4" "String5" "String6" ] getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2 getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2" getList=[ "String1" "String2" "String3" ] getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3 getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3" getList=[ "String1" "String2" "String3" ] } } } , o3=   {
+Entering AnnotationTest.level4(s4="level4: This is a test of the annotation system. This is only a test.", o1={ getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1 getList=[ "String1" "String2" "String3" "String4" "String5" "String6" ] getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1" getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2 getList=[ "String1" "String2" "String3" ] getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2" getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3 getList=[ "String1" "String2" "String3" ] getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3" } } } , o3=   {
       getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1
-      getName="net.j..."
       getList=[
          "Strin..."
          "Strin..."
@@ -45,24 +44,25 @@ Entering AnnotationTest.level4(s4="level4: This is a test of the annotation syst
          "Strin..."
          ... (1 members omitted)
       ]
+      getName="net.j..."
       getO=
       {
          getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2
-         getName="net.j..."
          getList=[
             "Strin..."
             "Strin..."
             "Strin..."
          ]
+         getName="net.j..."
          getO=
          {
             getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3
-            getName="net.j..."
             getList=[
                "Strin..."
                "Strin..."
                "Strin..."
             ]
+            getName="net.j..."
          }
       }
    }
@@ -85,7 +85,7 @@ Entering AnnotationTest.format1(s4=format1, o1={
       "list" : [ "String1", "String2", "String3" ]
     }
   }
-}, o2={ getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1 getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1" getList=[ "String1" "String2" "String3" "String4" "String5" "String6" ] getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2 getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2" getList=[ "String1" "String2" "String3" ] getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3 getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3" getList=[ "String1" "String2" "String3" ] } } } )
+}, o2={ getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1 getList=[ "String1" "String2" "String3" "String4" "String5" "String6" ] getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1" getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2 getList=[ "String1" "String2" "String3" ] getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2" getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3 getList=[ "String1" "String2" "String3" ] getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3" } } } )
 format1: This is a test of the annotation system. This is only a test.
 Exiting  AnnotationTest.format1=null
 PerfTrack:
@@ -95,7 +95,6 @@ PerfTrack:
 PerfTrack: no data?
 Entering AnnotationTest.format2(s4=format2: This is a test of the annotation system. This is only a test., _s4=format2: This is a test of the annotation system. This is only a test., o2=   {
       getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1
-      getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1"
       getList=[
          "String1"
          "String2"
@@ -104,24 +103,25 @@ Entering AnnotationTest.format2(s4=format2: This is a test of the annotation sys
          "String5"
          "String6"
       ]
+      getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1"
       getO=
       {
          getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2
-         getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2"
          getList=[
             "String1"
             "String2"
             "String3"
          ]
+         getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2"
          getO=
          {
             getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3
-            getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3"
             getList=[
                "String1"
                "String2"
                "String3"
             ]
+            getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3"
          }
       }
    }
