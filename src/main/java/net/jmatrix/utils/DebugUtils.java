@@ -346,7 +346,7 @@ public class DebugUtils {
       boolean found = false;
       for (i=0; i<stack.length; i++) {
          String className=stack[i].getClassName();
-         //System.out.println ("==> "+i+":"+className+"."+stack[i].getMethodName());
+         if (debug) System.out.println ("==> "+i+":"+className+"."+stack[i].getMethodName());
          if (className != null && className.equals(thisClassname))
             found=true;
          else if (found)
@@ -356,7 +356,30 @@ public class DebugUtils {
       if (callingElemen<stack.length) 
       {
          String className = stack[callingElemen].getClassName();
-         //System.out.println ("==> "+callingElemen+":"+className+"."+stack[callingElemen].getMethodName());
+         if (debug) System.out.println ("==> "+callingElemen+":"+className+"."+stack[callingElemen].getMethodName());
+         return className;
+      }
+      return null;
+   }
+   
+   /** */
+   public static final String getCallingClassName(String calledClassName) {
+      StackTraceElement stack[]=Thread.currentThread().getStackTrace();
+      
+      int i=0;
+      boolean found = false;
+      for (i=0; i<stack.length; i++) {
+         String className=stack[i].getClassName();
+         if (debug) System.out.println ("==> "+i+":"+className+"."+stack[i].getMethodName());
+         if (className != null && className.equals(calledClassName))
+            found=true;
+         else if (found)
+            break;
+      }
+      if (i<stack.length) 
+      {
+         String className = stack[i].getClassName();
+         if (debug) System.out.println ("==> "+i+":"+className+"."+stack[i].getMethodName());
          return className;
       }
       return null;

@@ -29,7 +29,7 @@ public class PerfTrackAspect extends AbstractLoggingAspect
       // from invocation to invocation. This will mean that the logger name that
       // appears in the log entry will be the class name annotated with
       // @PerfTracked and not PerfTracked itself.
-      Logger log = ClassLogFactory.getLog(1);
+      Logger log = ClassLogFactory.getLog(this.getClass().getName());
       String methodSignature = "<unknown>";
       String methodName = "<unknown>";
       long start=System.currentTimeMillis();

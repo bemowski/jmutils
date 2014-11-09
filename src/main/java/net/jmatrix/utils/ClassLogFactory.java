@@ -18,4 +18,10 @@ public class ClassLogFactory {
       Logger log=LoggerFactory.getLogger(callingClassname);
       return log;
    }
+   
+   public static final Logger getLog(String calledClassName) {
+      String callingClassname=DebugUtils.getCallingClassName(calledClassName);
+      Logger log=LoggerFactory.getLogger(callingClassname);
+      return log;
+   }
 }
