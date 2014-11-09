@@ -6,11 +6,11 @@ import java.io.PrintWriter;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationConfig;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
 
@@ -80,7 +80,7 @@ public class DebugUtils {
          return "\""+truncate((String)obj,maxLength)+"\"";
       }
 
-      Method methods[]=obj.getClass().getMethods();
+      Method methods[]=sortMethods(obj.getClass().getMethods());
       //System.out.println ("There are "+fields.length+" fields in "+this.getClass());
       Method method=null;
       String methodName = null;
@@ -140,6 +140,22 @@ public class DebugUtils {
       return sb.toString();
    }
    
+   public static class MethodComparator implements Comparator<Method>
+   {
+
+      @Override
+      public int compare(Method method1, Method method2)
+      {
+         return method1.getName().compareTo(method2.getName());
+      }
+      
+   }
+   private static Method[] sortMethods(Method[] methods)
+   {
+      Arrays.sort(methods, new MethodComparator());
+      return methods;
+   }
+
    /** */
    private static final String valueString(Object obj, int depth, int maxLength, boolean compact) {
       String separator = (compact ? " " : "\n");
