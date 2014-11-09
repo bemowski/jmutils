@@ -332,6 +332,7 @@ public class DebugUtils {
       }
       return sb.toString();
    }
+   
    public static final String getCallingClassName() {
       return getCallingClassName(0);
    }
@@ -342,29 +343,55 @@ public class DebugUtils {
       String thisClassname=DebugUtils.class.getName();
       
       int i=0;
+      boolean found = false;
       for (i=0; i<stack.length; i++) {
-         String classname=stack[i].getClassName();
-         if (debug) System.out.println (i+":"+classname);
-         if (classname == null || classname.equals(thisClassname))
+         String className=stack[i].getClassName();
+         //System.out.println ("==> "+i+":"+className+"."+stack[i].getMethodName());
+         if (className != null && className.equals(thisClassname))
+            found=true;
+         else if (found)
             break;
       }
-      for (; i<stack.length; i++) {
-         String classname=stack[i].getClassName();
-         if (debug) System.out.println (i+":"+classname);
-         if (classname == null || !classname.equals(thisClassname))
-            break;
-      }
-      int callingEle=i+depth;
-      if (callingEle<stack.length) {
-         if (debug) {
-            for (int j = i+1; j <= callingEle; j++) {
-               System.out.println (j+":"+stack[j].getClassName());
-            }
-         }
-         return stack[callingEle].getClassName();
+      int callingElemen=i+depth;
+      if (callingElemen<stack.length) 
+      {
+         String className = stack[callingElemen].getClassName();
+         //System.out.println ("==> "+callingElemen+":"+className+"."+stack[callingElemen].getMethodName());
+         return className;
       }
       return null;
    }
+   
+//   /** */
+//   
+//   public static final String getCallingClassName(int depth) {
+//      StackTraceElement stack[]=Thread.currentThread().getStackTrace();
+//      String thisClassname=DebugUtils.class.getName();
+//      
+//      int i=0;
+//      for (i=0; i<stack.length; i++) {
+//         String classname=stack[i].getClassName();
+//         if (debug) System.out.println (i+":"+classname);
+//         if (classname == null || classname.equals(thisClassname))
+//            break;
+//      }
+//      for (; i<stack.length; i++) {
+//         String classname=stack[i].getClassName();
+//         if (debug) System.out.println (i+":"+classname);
+//         if (classname == null || !classname.equals(thisClassname))
+//            break;
+//      }
+//      int callingEle=i+depth;
+//      if (callingEle<stack.length) {
+//         if (debug) {
+//            for (int j = i+1; j <= callingEle; j++) {
+//               System.out.println (j+":"+stack[j].getClassName());
+//            }
+//         }
+//         return stack[callingEle].getClassName();
+//      }
+//      return null;
+//   }
    
    /** */
    public static final String getCallingClassAndMethod(int depth) {
