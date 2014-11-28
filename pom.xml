@@ -141,6 +141,7 @@
                 <configuration>
                     <systemPropertyVariables>
                         <project.basedir>${project.basedir}</project.basedir>
+                        <debug>true</debug>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

@@ -50,6 +50,10 @@ public class AnnotationTest extends AbstractServiceTest
       // Remove Object array addreses which can vary and cause the comparison to the prior run to fail
       result = result.replaceAll("\\[Ljava.lang.Object;@[0-9a-f]+", "[Ljava.lang.Object;@00000000");
 
+      // Remove stack trace line numbers and compiler versions which can vary and cause the comparison to the prior run to fail
+      result = result.replaceAll("(\tat (java|sun)\\..*\\.java:)[0-9]+","$1#");
+      result = result.replaceAll("(\tat ([^~]+)).*","$1");
+
       // Compare results of the current run against the results of a saved run
       compareToSavedResult(result, this.getClass().getName()+".annotationTest");
    }
