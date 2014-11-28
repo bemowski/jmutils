@@ -63,7 +63,7 @@ public class PerfTrackAspect extends AbstractLoggingAspect
          if (threshold >= 0) et = PerfTrack.stop(methodSignature,methodSignature,e);
          if (npe == null)
          {
-            log.debug("Failed["+(threshold>0?et:"")+"ms] "+methodName+"Exception="+e);
+            log.debug("Failed["+(threshold>0?et:"")+"ms] "+methodName+" Exception="+e);
          }
          else
          {
