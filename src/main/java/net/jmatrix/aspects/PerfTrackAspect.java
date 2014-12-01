@@ -14,7 +14,6 @@ import org.slf4j.Logger;
 @Aspect
 public class PerfTrackAspect extends AbstractLoggingAspect
 {
-   private static boolean debug = Boolean.valueOf(System.getProperty("debug", "false"));
    static final String[] emptyArray = new String[] {};
    private long threshold = 0;
 
@@ -53,9 +52,7 @@ public class PerfTrackAspect extends AbstractLoggingAspect
          Object result = thisJoinPoint.proceed();
          long et = -1;
          if (threshold >= 0) et = PerfTrack.stop(methodSignature);
-         if (debug) System.out.println("Before Exit");
-         if (!hasLogAnnotation) log.debug("Exiting["+(threshold>0?et:"")+"ms] "+methodName+"="+format(perfTrack.result(), new Object[] {result}));
-         if (debug) System.out.println("After Exit");
+         log.debug("Exiting["+(threshold>0?et:"")+"ms] "+methodName+"="+format(perfTrack.result(), new Object[] {result}));
          return result;
       }
       catch (Throwable e)
@@ -83,9 +80,7 @@ public class PerfTrackAspect extends AbstractLoggingAspect
             {
                if (et > threshold )
                {
-                  if (debug) System.out.println("Before PerfTrack:");
                   log.debug("PerfTrack:\n"+PerfTrack.toString(0));
-                  if (debug) System.out.println("After PerfTrack:");
                }
                PerfTrack.clear();
             }
