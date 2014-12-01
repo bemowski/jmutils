@@ -87,7 +87,7 @@ Entering AnnotationTest.format1(s4=format1, o1={
   }
 }, o2={ getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1 getList=[ "String1" "String2" "String3" "String4" "String5" "String6" ] getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1" getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2 getList=[ "String1" "String2" "String3" ] getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2" getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3 getList=[ "String1" "String2" "String3" ] getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3" } } } )
 format1: This is a test of the annotation system. This is only a test.
-Exiting  AnnotationTest.format1=null
+Exiting[# ms] AnnotationTest.format1=null
 PerfTrack:
 AnnotationTest.format1() # ms
 
@@ -136,8 +136,8 @@ java.util.UnknownFormatConversionException: Conversion = 'q'
 	at java.util.Formatter.format(Formatter.java:#) 
 	at java.util.Formatter.format(Formatter.java:#) 
 	at java.lang.String.format(String.java:#) 
-	at net.jmatrix.aspects.AbstractLoggingAspect.format(AbstractLoggingAspect.java:246) [classes/:na]
-	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:121) [classes/:na]
+	at net.jmatrix.aspects.AbstractLoggingAspect.format(AbstractLoggingAspect.java:258) [classes/:na]
+	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:133) [classes/:na]
 	at net.jmatrix.aspects.LoggedAspect.ajc$superDispatch$net_jmatrix_aspects_LoggedAspect$formatMethodSignature(LoggedAspect.java:1) [classes/:na]
 	at net.jmatrix.aspects.LoggedAspect.logged(LoggedAspect.java:36) [classes/:na]
 	at net.jmatrix.test.annotations.AnnotationTest.errorFormat1(AnnotationTest.java:119) [test-classes/:na]
@@ -171,8 +171,8 @@ Erroneous Format 1
 Exiting  AnnotationTest.errorFormat1=null
 Index: 1 is beyond the end of the argument array of length 1 at:
 java.lang.Exception
-	at net.jmatrix.aspects.AbstractLoggingAspect.format(AbstractLoggingAspect.java:238)
-	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:121)
+	at net.jmatrix.aspects.AbstractLoggingAspect.format(AbstractLoggingAspect.java:250)
+	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:133)
 	at net.jmatrix.aspects.LoggedAspect.ajc$superDispatch$net_jmatrix_aspects_LoggedAspect$formatMethodSignature(LoggedAspect.java:1)
 	at net.jmatrix.aspects.LoggedAspect.logged(LoggedAspect.java:36)
 	at net.jmatrix.test.annotations.AnnotationTest.errorFormat2(AnnotationTest.java:127)
