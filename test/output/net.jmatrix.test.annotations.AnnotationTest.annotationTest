@@ -21,15 +21,19 @@ level1: This is a test of the annotation system. This is only a test.
 Exiting[# ms] AnnotationTest.level4b=null
 Exiting[# ms] AnnotationTest.level3=null
 Exiting[# ms] AnnotationTest.level2=null
+Entering AnnotationTest.level1b(s1=This is level1b)
+This is level1b
+Exiting[# ms] AnnotationTest.level1b=null
 Exiting[# ms] AnnotationTest.level1=null
 PerfTrack:
-AnnotationTest.level1(s1="level1: This is a test of the annotation system. This is only a test.") # ms
-  AnnotationTest.level2() # ms
-    AnnotationTest.level3(s3="level1: This is a test of the annotation system. This is only a test.") # ms
-      AnnotationTest.level4b(s4="level1: This is a test of the annotation system. This is only a test.", o1=null, o3=null) # ms
+AnnotationTest.level1 # ms
+  AnnotationTest.level2 # ms
+    AnnotationTest.level3 # ms
+      AnnotationTest.level4b # ms
       * 5 calls to AnnotationTest.level4 # ms
       Other # ms
     Other # ms
+  AnnotationTest.level1b(s1=This is level1b) # ms
   Other # ms
 
 PerfTrack:
@@ -89,7 +93,7 @@ Entering AnnotationTest.format1(s4=format1, o1={
 format1: This is a test of the annotation system. This is only a test.
 Exiting[# ms] AnnotationTest.format1=null
 PerfTrack:
-AnnotationTest.format1() # ms
+AnnotationTest.format1 # ms
 
 PerfTrack:
 PerfTrack: no data?
@@ -140,7 +144,7 @@ java.util.UnknownFormatConversionException: Conversion = 'q'
 	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:133) [classes/:na]
 	at net.jmatrix.aspects.LoggedAspect.ajc$superDispatch$net_jmatrix_aspects_LoggedAspect$formatMethodSignature(LoggedAspect.java:1) [classes/:na]
 	at net.jmatrix.aspects.LoggedAspect.logged(LoggedAspect.java:36) [classes/:na]
-	at net.jmatrix.test.annotations.AnnotationTest.errorFormat1(AnnotationTest.java:119) [test-classes/:na]
+	at net.jmatrix.test.annotations.AnnotationTest.errorFormat1(AnnotationTest.java:127) [test-classes/:na]
 	at net.jmatrix.test.annotations.AnnotationTest.annotationTest(AnnotationTest.java:41) [test-classes/:na]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) 
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:#) 
@@ -175,7 +179,7 @@ java.lang.Exception
 	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:133)
 	at net.jmatrix.aspects.LoggedAspect.ajc$superDispatch$net_jmatrix_aspects_LoggedAspect$formatMethodSignature(LoggedAspect.java:1)
 	at net.jmatrix.aspects.LoggedAspect.logged(LoggedAspect.java:36)
-	at net.jmatrix.test.annotations.AnnotationTest.errorFormat2(AnnotationTest.java:127)
+	at net.jmatrix.test.annotations.AnnotationTest.errorFormat2(AnnotationTest.java:135)
 	at net.jmatrix.test.annotations.AnnotationTest.annotationTest(AnnotationTest.java:42)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:#)

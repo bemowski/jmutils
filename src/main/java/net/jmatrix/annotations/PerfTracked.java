@@ -46,4 +46,6 @@ public @interface PerfTracked
    String result() default "%s";
    
    long threshold() default 20;
+   
+   boolean verbose() default false;
 }
