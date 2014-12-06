@@ -45,7 +45,19 @@ public @interface PerfTracked
     */
    String result() default "%s";
    
+   /**
+    * <code>threshold</code> is the number of milliseconds of execution time that
+    * are required for a method to show up in the PerfTrack summary.
+    *
+    * @return
+    */
    long threshold() default 20;
    
-   boolean verbose() default false;
+   /**
+    * <code>verbosÔe</code> indicates whether or not to include method parameters in the 
+    * PerfTrack summary printed out at the end of a request. Default is false
+    *
+    * @return
+    */
+   boolean verbosÔe() default false;
 }
