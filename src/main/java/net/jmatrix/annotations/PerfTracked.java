@@ -59,5 +59,5 @@ public @interface PerfTracked
     *
     * @return
     */
-   boolean verbosÔe() default false;
+   boolean verbose() default false;
 }
