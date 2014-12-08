@@ -40,7 +40,7 @@ public class AnnotationTest extends AbstractServiceTest
       format2("format2: "+arg, new TestDomainClass1(), new TestDomainClass1());
       errorFormat1("Erroneous Format 1");
       errorFormat2("Erroneous Format 2");
-      
+
       // Get the log output
       String result = baos.toString();
     
@@ -49,6 +49,10 @@ public class AnnotationTest extends AbstractServiceTest
       
       // Remove Object array addreses which can vary and cause the comparison to the prior run to fail
       result = result.replaceAll("\\[Ljava.lang.Object;@[0-9a-f]+", "[Ljava.lang.Object;@00000000");
+
+      // Remove stack trace line numbers and compiler versions which can vary and cause the comparison to the prior run to fail
+      result = result.replaceAll("(\tat (java|sun)\\..*\\.java:)[0-9]+","$1#");
+      result = result.replaceAll("(\tat ([^~]+)).*","$1");
 
       // Compare results of the current run against the results of a saved run
       compareToSavedResult(result, this.getClass().getName()+".annotationTest");
@@ -59,6 +63,7 @@ public class AnnotationTest extends AbstractServiceTest
    {
       Thread.sleep(20);
       level2(s1);
+      level1b("This is level1b");
    }
    
    @PerfTracked // Parameter should not print since no paramNames specified
@@ -95,6 +100,13 @@ public class AnnotationTest extends AbstractServiceTest
       log.debug(s4);
    }
    
+   @PerfTracked(format="s1=%s", threshold=10, verbose=true)
+   public void level1b(String s1) throws InterruptedException
+   {
+      Thread.sleep(15);
+      log.debug(s1);
+   }
+
    @PerfTracked(threshold=50)
    @Logged(format="s4=%.7s, o1=%J, o2=%3$d")
    public void format1(String s4, Object o1, Object o2) throws InterruptedException

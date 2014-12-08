@@ -42,6 +42,18 @@ public abstract class AbstractLoggingAspect
       return false;
    }
 
+   protected boolean hasPerfTrackedAnnotation(ProceedingJoinPoint thisJoinPoint)
+   {
+      Signature sig = thisJoinPoint.getStaticPart().getSignature();
+      if (sig instanceof MethodSignature) {
+         // this must be a call or execution join point
+         Method method = ((MethodSignature)sig).getMethod();
+         PerfTracked perfTrackedAnnotation = method.getAnnotation(PerfTracked.class);
+         if (perfTrackedAnnotation != null) return true;
+      }
+      return false;
+   }
+
    protected String[] getParamNames(ProceedingJoinPoint thisJoinPoint)
    {
       Signature sig = thisJoinPoint.getStaticPart().getSignature();

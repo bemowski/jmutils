@@ -13,7 +13,6 @@ import org.slf4j.Logger;
 
 @Aspect
 public class PerfTrackAspect extends AbstractLoggingAspect
-
 {
    static final String[] emptyArray = new String[] {};
    private long threshold = 0;
@@ -34,6 +33,7 @@ public class PerfTrackAspect extends AbstractLoggingAspect
       String methodName = "<unknown>";
       long start=System.currentTimeMillis();
       threshold = perfTrack.threshold();
+      String key = methodName;
       try
       {
          if (StringUtil.empty(perfTrack.format()))
@@ -45,22 +45,28 @@ public class PerfTrackAspect extends AbstractLoggingAspect
          {
             methodSignature = formatMethodSignature(thisJoinPoint, perfTrack.format());
          }
+         
          methodName = methodSignature.substring(0,methodSignature.indexOf('('));
+         
+         key = perfTrack.verbose() ? methodSignature : methodName;
                
-         if (threshold >= 0) PerfTrack.start(methodSignature,methodName,threshold);
+         if (threshold >= 0) {
+            PerfTrack.start(key,methodName,threshold);
+         }
+         
          boolean hasLogAnnotation = hasLogAnnotation(thisJoinPoint);
          if (!hasLogAnnotation) log.debug("Entering "+methodSignature);
          Object result = thisJoinPoint.proceed();
          long et = -1;
-         if (threshold >= 0) et = PerfTrack.stop(methodSignature);
-         if (!hasLogAnnotation) log.debug("Exiting["+(threshold>0?et:"")+"ms] "+methodName+"="+format(perfTrack.result(), new Object[] {result}));
+         if (threshold >= 0) et = PerfTrack.stop(key);
+         log.debug("Exiting["+(threshold>0?et:"")+"ms] "+methodName+"="+format(perfTrack.result(), new Object[] {result}));
          return result;
       }
       catch (Throwable e)
       {
          NullPointerException npe = ExceptionUtils.findExceptionInStack(e, NullPointerException.class);
          long et = -1;
-         if (threshold >= 0) et = PerfTrack.stop(methodSignature,methodSignature,e);
+         if (threshold >= 0) et = PerfTrack.stop(key,methodSignature,e);
          if (npe == null)
          {
             log.debug("Failed["+(threshold>0?et:"")+"ms] "+methodName+" Exception="+e);

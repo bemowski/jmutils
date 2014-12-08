@@ -21,15 +21,19 @@ level1: This is a test of the annotation system. This is only a test.
 Exiting[# ms] AnnotationTest.level4b=null
 Exiting[# ms] AnnotationTest.level3=null
 Exiting[# ms] AnnotationTest.level2=null
+Entering AnnotationTest.level1b(s1=This is level1b)
+This is level1b
+Exiting[# ms] AnnotationTest.level1b=null
 Exiting[# ms] AnnotationTest.level1=null
 PerfTrack:
-AnnotationTest.level1(s1="level1: This is a test of the annotation system. This is only a test.") # ms
-  AnnotationTest.level2() # ms
-    AnnotationTest.level3(s3="level1: This is a test of the annotation system. This is only a test.") # ms
-      AnnotationTest.level4b(s4="level1: This is a test of the annotation system. This is only a test.", o1=null, o3=null) # ms
+AnnotationTest.level1 # ms
+  AnnotationTest.level2 # ms
+    AnnotationTest.level3 # ms
+      AnnotationTest.level4b # ms
       * 5 calls to AnnotationTest.level4 # ms
       Other # ms
     Other # ms
+  AnnotationTest.level1b(s1=This is level1b) # ms
   Other # ms
 
 PerfTrack:
@@ -87,9 +91,9 @@ Entering AnnotationTest.format1(s4=format1, o1={
   }
 }, o2={ getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1 getList=[ "String1" "String2" "String3" "String4" "String5" "String6" ] getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass1" getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2 getList=[ "String1" "String2" "String3" ] getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass2" getO= { getClass: net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3 getList=[ "String1" "String2" "String3" ] getName="net.jmatrix.test.annotations.AnnotationTest$TestDomainClass3" } } } )
 format1: This is a test of the annotation system. This is only a test.
-Exiting  AnnotationTest.format1=null
+Exiting[# ms] AnnotationTest.format1=null
 PerfTrack:
-AnnotationTest.format1() # ms
+AnnotationTest.format1 # ms
 
 PerfTrack:
 PerfTrack: no data?
@@ -130,22 +134,22 @@ format2: This is a test of the annotation system. This is only a test.
 Exiting  AnnotationTest.format2=null
 Error formatting args with format String: s4=%1$q
 java.util.UnknownFormatConversionException: Conversion = 'q'
-	at java.util.Formatter$FormatSpecifier.conversion(Formatter.java:2691) ~[na:1.8.0]
-	at java.util.Formatter$FormatSpecifier.<init>(Formatter.java:2720) ~[na:1.8.0]
-	at java.util.Formatter.parse(Formatter.java:2560) ~[na:1.8.0]
-	at java.util.Formatter.format(Formatter.java:2501) ~[na:1.8.0]
-	at java.util.Formatter.format(Formatter.java:2455) ~[na:1.8.0]
-	at java.lang.String.format(String.java:2925) ~[na:1.8.0]
-	at net.jmatrix.aspects.AbstractLoggingAspect.format(AbstractLoggingAspect.java:246) [classes/:na]
-	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:121) [classes/:na]
+	at java.util.Formatter$FormatSpecifier.conversion(Formatter.java:#) 
+	at java.util.Formatter$FormatSpecifier.<init>(Formatter.java:#) 
+	at java.util.Formatter.parse(Formatter.java:#) 
+	at java.util.Formatter.format(Formatter.java:#) 
+	at java.util.Formatter.format(Formatter.java:#) 
+	at java.lang.String.format(String.java:#) 
+	at net.jmatrix.aspects.AbstractLoggingAspect.format(AbstractLoggingAspect.java:258) [classes/:na]
+	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:133) [classes/:na]
 	at net.jmatrix.aspects.LoggedAspect.ajc$superDispatch$net_jmatrix_aspects_LoggedAspect$formatMethodSignature(LoggedAspect.java:1) [classes/:na]
 	at net.jmatrix.aspects.LoggedAspect.logged(LoggedAspect.java:36) [classes/:na]
-	at net.jmatrix.test.annotations.AnnotationTest.errorFormat1(AnnotationTest.java:115) [test-classes/:na]
+	at net.jmatrix.test.annotations.AnnotationTest.errorFormat1(AnnotationTest.java:127) [test-classes/:na]
 	at net.jmatrix.test.annotations.AnnotationTest.annotationTest(AnnotationTest.java:41) [test-classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0]
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0]
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0]
-	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) 
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:#) 
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:#) 
+	at java.lang.reflect.Method.invoke(Method.java:#) 
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44) [junit-4.8.1.jar:na]
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15) [junit-4.8.1.jar:na]
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41) [junit-4.8.1.jar:na]
@@ -171,16 +175,16 @@ Erroneous Format 1
 Exiting  AnnotationTest.errorFormat1=null
 Index: 1 is beyond the end of the argument array of length 1 at:
 java.lang.Exception
-	at net.jmatrix.aspects.AbstractLoggingAspect.format(AbstractLoggingAspect.java:238)
-	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:121)
+	at net.jmatrix.aspects.AbstractLoggingAspect.format(AbstractLoggingAspect.java:250)
+	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:133)
 	at net.jmatrix.aspects.LoggedAspect.ajc$superDispatch$net_jmatrix_aspects_LoggedAspect$formatMethodSignature(LoggedAspect.java:1)
 	at net.jmatrix.aspects.LoggedAspect.logged(LoggedAspect.java:36)
-	at net.jmatrix.test.annotations.AnnotationTest.errorFormat2(AnnotationTest.java:123)
+	at net.jmatrix.test.annotations.AnnotationTest.errorFormat2(AnnotationTest.java:135)
 	at net.jmatrix.test.annotations.AnnotationTest.annotationTest(AnnotationTest.java:42)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:483)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:#)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:#)
+	at java.lang.reflect.Method.invoke(Method.java:#)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)

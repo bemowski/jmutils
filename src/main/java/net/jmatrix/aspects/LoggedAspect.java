@@ -39,7 +39,8 @@ public class LoggedAspect extends AbstractLoggingAspect
                
          log.debug("Entering "+methodSignature);
          Object result = thisJoinPoint.proceed();
-         log.debug("Exiting  "+methodName+"="+format(logged.result(), new Object[] {result}));
+         boolean hasPerTrackedAnnotation = hasPerfTrackedAnnotation(thisJoinPoint);
+         if (!hasPerTrackedAnnotation) log.debug("Exiting  "+methodName+"="+format(logged.result(), new Object[] {result}));
          return result;
       }
       catch (Throwable e)
