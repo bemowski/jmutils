@@ -11,12 +11,10 @@ import java.io.IOException;
 import java.io.StringWriter;
 
 import net.jmatrix.context.LogContext;
-import net.jmatrix.jproperties.JProperties;
 import net.jmatrix.test.annotations.AnnotationTest;
 import net.jmatrix.utils.ClassLogFactory;
 import net.jmatrix.utils.StreamUtil;
 
-import org.apache.commons.lang3.StringUtils;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.slf4j.LoggerFactory;
@@ -31,8 +29,6 @@ import ch.qos.logback.core.OutputStreamAppender;
 public class AbstractServiceTest {
    static Logger log=(Logger)ClassLogFactory.getLog();
 
-   public static JProperties p=new JProperties();
-   
    
    static {
       // this works, with junit ant task, if we defind the forkmode="once"
@@ -42,13 +38,13 @@ public class AbstractServiceTest {
       
       String testPropsFile=System.getProperty("test.properties");
       System.out.println ("Test Properties:"+testPropsFile);
-      try {
-         if (!StringUtils.isEmpty(testPropsFile)) {
-            p.load(testPropsFile);
-         }
-      } catch (Exception ex) {
-         throw new RuntimeException("Cannot setup test harness.", ex);
-      }
+//      try {
+//         if (!StringUtils.isEmpty(testPropsFile)) {
+//            p.load(testPropsFile);
+//         }
+//      } catch (Exception ex) {
+//         throw new RuntimeException("Cannot setup test harness.", ex);
+//      }
       
       LogContext.put(LogContext.TRANSPORT, "JUNIT");
       
