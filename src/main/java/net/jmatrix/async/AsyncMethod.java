@@ -139,13 +139,17 @@ public class AsyncMethod<V> extends Observable implements Callable<V>
    public boolean equals(Object o)
    {
       AsyncMethod<?> asyncMethod = (AsyncMethod<?>)o;
+      log.debug("Async method: "+this+"  equals "+o+", args.length="+
+        (args != null ? args.length:"null"));
+      
       boolean result;
       result = target.equals(asyncMethod.getTarget());
       result &= method.equals(asyncMethod.getMethod());
       int i = 0;
       for (Object arg : args)
       {
-         result &= arg.equals(asyncMethod.getArgs()[i++]);
+         result &= ( arg == null && asyncMethod.getArgs()[i] == null) ||
+                   (arg.equals(asyncMethod.getArgs()[i++]));
       }
       return result;
    }
