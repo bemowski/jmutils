@@ -4,7 +4,7 @@
     <groupId>net.jmatrix</groupId>
     <artifactId>jmutils</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     
     
    <licenses>
@@ -88,7 +88,7 @@
         <dependency>
             <groupId>net.jmatrix</groupId>
             <artifactId>jproperties</artifactId>
-            <version>0.9.8</version>
+            <version>1.0.6</version>
         </dependency>
 
         <dependency>
