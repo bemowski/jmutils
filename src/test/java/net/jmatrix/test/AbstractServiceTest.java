@@ -5,11 +5,9 @@ import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.OutputStreamAppender;
-import net.jmatrix.jproperties.JProperties;
 import net.jmatrix.test.annotations.AnnotationTest;
 import net.jmatrix.utils.ClassLogFactory;
 import net.jmatrix.utils.StreamUtil;
-import org.apache.commons.lang3.StringUtils;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.slf4j.LoggerFactory;
@@ -28,46 +26,10 @@ import static org.junit.Assert.assertEquals;
 public class AbstractServiceTest {
    static Logger log=(Logger)ClassLogFactory.getLog();
 
-   public static JProperties p=new JProperties();
-   
-   
-   static {
-      // this works, with junit ant task, if we defind the forkmode="once"
-      // vs. the ant default of "perTest"
-      
-      //Log4JLogConfig.log4jBootstrap();
-      
-      String testPropsFile=System.getProperty("test.properties");
-      System.out.println ("Test Properties:"+testPropsFile);
-      try {
-         if (!StringUtils.isEmpty(testPropsFile)) {
-            p.load(testPropsFile);
-         }
-      } catch (Exception ex) {
-         throw new RuntimeException("Cannot setup test harness.", ex);
-      }
-      
-     // LogContext.put(LogContext.TRANSPORT, "JUNIT");
-      
-      try {
-         Thread.currentThread().sleep(3000);
-      } catch (Exception ex) {
-         log.error("Error sleeping: ",ex);
-      }
-   }
+
 
    @BeforeClass
    public static void setup() throws Exception {
-//      Log4JLogConfig.log4jBootstrap();
-//      
-//      EProperties p=new EProperties();
-//      
-//      String testPropsFile=System.getProperty("test.properties");
-//      System.out.println ("Test Properties:"+testPropsFile);
-//      
-//      p.load(System.getProperty("test.properties"));
-//      
-//      locator=ServiceLocator.init(p.getProperties("services"));
    }
    
    @AfterClass
