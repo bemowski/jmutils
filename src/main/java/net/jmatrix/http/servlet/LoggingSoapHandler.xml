@@ -1,8 +1,0 @@
-<handler-chains xmlns="http://java.sun.com/xml/ns/javaee">
-    <handler-chain>
-       <handler>
-           <handler-name>LoggingSoapHandler</handler-name>
-           <handler-class>net.jmatrix.dproxy.LoggingSoapHandler</handler-class>
-       </handler>
-    </handler-chain>
-</handler-chains>

@@ -134,42 +134,42 @@ format2: This is a test of the annotation system. This is only a test.
 Exiting  AnnotationTest.format2=null
 Error formatting args with format String: s4=%1$q
 java.util.UnknownFormatConversionException: Conversion = 'q'
-	at java.util.Formatter$FormatSpecifier.conversion(Formatter.java:#) 
-	at java.util.Formatter$FormatSpecifier.<init>(Formatter.java:#) 
-	at java.util.Formatter.parse(Formatter.java:#) 
-	at java.util.Formatter.format(Formatter.java:#) 
-	at java.util.Formatter.format(Formatter.java:#) 
-	at java.lang.String.format(String.java:#) 
-	at net.jmatrix.aspects.AbstractLoggingAspect.format(AbstractLoggingAspect.java:258) [classes/:na]
-	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:133) [classes/:na]
-	at net.jmatrix.aspects.LoggedAspect.ajc$superDispatch$net_jmatrix_aspects_LoggedAspect$formatMethodSignature(LoggedAspect.java:1) [classes/:na]
-	at net.jmatrix.aspects.LoggedAspect.logged(LoggedAspect.java:36) [classes/:na]
-	at net.jmatrix.test.annotations.AnnotationTest.errorFormat1(AnnotationTest.java:127) [test-classes/:na]
-	at net.jmatrix.test.annotations.AnnotationTest.annotationTest(AnnotationTest.java:41) [test-classes/:na]
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) 
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:#) 
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:#) 
-	at java.lang.reflect.Method.invoke(Method.java:#) 
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44) [junit-4.8.1.jar:na]
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15) [junit-4.8.1.jar:na]
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41) [junit-4.8.1.jar:na]
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20) [junit-4.8.1.jar:na]
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76) [junit-4.8.1.jar:na]
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50) [junit-4.8.1.jar:na]
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193) [junit-4.8.1.jar:na]
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52) [junit-4.8.1.jar:na]
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191) [junit-4.8.1.jar:na]
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42) [junit-4.8.1.jar:na]
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184) [junit-4.8.1.jar:na]
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28) [junit-4.8.1.jar:na]
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31) [junit-4.8.1.jar:na]
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:236) [junit-4.8.1.jar:na]
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264) [surefire-junit4-2.16.jar:2.16]
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153) [surefire-junit4-2.16.jar:2.16]
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124) [surefire-junit4-2.16.jar:2.16]
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200) [surefire-booter-2.16.jar:2.16]
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153) [surefire-booter-2.16.jar:2.16]
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103) [surefire-booter-2.16.jar:2.16]
+	at java.util.Formatter$FormatSpecifier.conversion(Formatter.java:#)
+	at java.util.Formatter$FormatSpecifier.<init>(Formatter.java:#)
+	at java.util.Formatter.parse(Formatter.java:#)
+	at java.util.Formatter.format(Formatter.java:#)
+	at java.util.Formatter.format(Formatter.java:#)
+	at java.lang.String.format(String.java:#)
+	at net.jmatrix.aspects.AbstractLoggingAspect.format(AbstractLoggingAspect.java:258)
+	at net.jmatrix.aspects.AbstractLoggingAspect.formatMethodSignature(AbstractLoggingAspect.java:133)
+	at net.jmatrix.aspects.LoggedAspect.ajc$superDispatch$net_jmatrix_aspects_LoggedAspect$formatMethodSignature(LoggedAspect.java:1)
+	at net.jmatrix.aspects.LoggedAspect.logged(LoggedAspect.java:36)
+	at net.jmatrix.test.annotations.AnnotationTest.errorFormat1(AnnotationTest.java:127)
+	at net.jmatrix.test.annotations.AnnotationTest.annotationTest(AnnotationTest.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:#)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:#)
+	at java.lang.reflect.Method.invoke(Method.java:#)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:31)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 Entering AnnotationTest.errorFormat1(s4=%1$q: [Ljava.lang.Object;@00000000)
 Erroneous Format 1
 Exiting  AnnotationTest.errorFormat1=null
