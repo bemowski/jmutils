@@ -1,6 +1,18 @@
 package net.jmatrix.test;
 
-import static org.junit.Assert.assertEquals;
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
+import ch.qos.logback.classic.spi.ILoggingEvent;
+import ch.qos.logback.core.OutputStreamAppender;
+import net.jmatrix.jproperties.JProperties;
+import net.jmatrix.test.annotations.AnnotationTest;
+import net.jmatrix.utils.ClassLogFactory;
+import net.jmatrix.utils.StreamUtil;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -10,22 +22,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.StringWriter;
 
-import net.jmatrix.context.LogContext;
-import net.jmatrix.jproperties.JProperties;
-import net.jmatrix.test.annotations.AnnotationTest;
-import net.jmatrix.utils.ClassLogFactory;
-import net.jmatrix.utils.StreamUtil;
-
-import org.apache.commons.lang3.StringUtils;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.slf4j.LoggerFactory;
-
-import ch.qos.logback.classic.Logger;
-import ch.qos.logback.classic.LoggerContext;
-import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
-import ch.qos.logback.classic.spi.ILoggingEvent;
-import ch.qos.logback.core.OutputStreamAppender;
+import static org.junit.Assert.assertEquals;
 
 /** */
 public class AbstractServiceTest {
@@ -50,7 +47,7 @@ public class AbstractServiceTest {
          throw new RuntimeException("Cannot setup test harness.", ex);
       }
       
-      LogContext.put(LogContext.TRANSPORT, "JUNIT");
+     // LogContext.put(LogContext.TRANSPORT, "JUNIT");
       
       try {
          Thread.currentThread().sleep(3000);

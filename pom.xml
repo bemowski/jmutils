@@ -4,7 +4,7 @@
     <groupId>net.jmatrix</groupId>
     <artifactId>jmutils</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.7</version>
+    <version>1.1.0</version>
 
     <profiles>
         <profile>
