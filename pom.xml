@@ -4,7 +4,7 @@
     <groupId>net.jmatrix</groupId>
     <artifactId>jmutils</artifactId>
     <packaging>jar</packaging>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
 
     <profiles>
         <profile>
@@ -79,7 +79,7 @@
         <logback.version>1.2.3</logback.version>
         <aspectj.version>1.9.2</aspectj.version>
         <compiler.version>1.8</compiler.version>
-        <jackson.version>2.9.8</jackson.version>
+        <jackson.version>2.9.9</jackson.version>
     </properties>
     <dependencies>
         <dependency>
