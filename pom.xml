@@ -80,7 +80,7 @@
         <aspectj.version>1.9.2</aspectj.version>
         <compiler.version>1.8</compiler.version>
         <jackson.version>2.9.9</jackson.version>
-        <jackson.databind.version>2.9.9.3</jackson.databind.version>
+        <jackson.databind.version>2.9.10.8</jackson.databind.version>
     </properties>
     <dependencies>
         <dependency>
